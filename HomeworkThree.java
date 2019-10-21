@@ -10,11 +10,12 @@ public class HomeworkThree {
             char judge = sample.charAt(0);
             if(judge == 'A'){                           //把判断是A开头的字符串加入到新的ArryList中
                 allTheA.add(sample);
-
             }
         }
+        list.removeAll(list);
+        list.addAll(allTheA);
 
-        return allTheA;                                //返回新的字符串
+        return list;                                //返回新的字符串
     }
 
 
@@ -25,6 +26,7 @@ public class HomeworkThree {
         for (T sample1 : ts){
             longable.add(sample1);
         }
+
         return longable;
     }
 
@@ -68,9 +70,18 @@ public class HomeworkThree {
             newList3.add(sample4);
             newList3.add(sample4.length()+"");
         }          //补上字符串长度
+        for (String sample5 : newList3){
+            list.add(sample5);
+        }
 
+        for (String sample4 : newList3){
+            list.add(sample4);
+        }
 
-        return newList3;
+        list.removeAll(list);
+        list.addAll(newList3);
+
+        return list;
     }
 
 
@@ -84,7 +95,12 @@ public class HomeworkThree {
                 newList.add(sample3);
             }
         }
-    return newList;
+
+        list.removeAll(list);
+        list.addAll(newList);
+
+        return list;
+
     }
 
 
@@ -114,5 +130,13 @@ public class HomeworkThree {
         *[kindergarten, 12, sympathetic, 11, Although, 8, accurate, 8, Culture, 7, Agency, 6, pepper, 6, nation, 6]
         *[Agency, accurate, Although, pepper, Culture, nation, kindergarten, sympathetic]
         * */
+
+        //修正后输出：
+//        [Agency, Although]
+//[1, 2, 3, 4, 5]
+//[kindergarten, 12, sympathetic, 11, Although, 8, Agency, 6]
+//[kindergarten, 12, sympathetic, 11, Although, 8, Agency, 6, nation]
+//
+//        Process finished with exit code 0
     }
 }
